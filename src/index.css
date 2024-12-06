@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes rotate2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(140deg);
+  }
+  100% {
+    transform: rotate(70deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+/* Custom styles for slick arrows */
+.custom-arrow {
+  display: none;
+}
+
+.slick-prev::before,
+.slick-next::before {
+  content: "";
+  display: block;
+  background: darkgreen;
+  color: white;
+  border-radius: 50%;
+  padding: 5px;
+  position: absolute;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.slick-prev::before {
+  padding: 5px;
+
+  left: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.slick-next::before {
+  padding: 5px;
+
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.slick-slider:hover .slick-prev,
+.slick-slider:hover .slick-next {
+  display: block !important;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-scroll {
+  display: inline-block;
+  animation: scroll 10s linear infinite;
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Custom scrollbar styles */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+html {
+  scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
+/* Styles for the DatePickerInput component */
+
+.mantine-DatePickerInput-day[data-selected] {
+  background-color: green !important;
+  color: white !important;
+}
+
+.mantine-DatePickerInput-day[data-in-range] {
+  background-color: palegreen;
+  color: black;
+}
+
+.mantine-DatePickerInput-day:hover {
+  background-color: green !important;
+  cursor: pointer;
+  color: white !important;
+}
+
+.mantine-DatePickerInput-day[data-selected]:hover {
+  background-color: darkgreen;
+  color: white !important;
+}
+
+.mantine-DatePickerInput-input {
+  background: #141517;
+  color: white;
+  border: 1px solid gray;
+}
+
+.mantine-DatePickerInput-input:focus {
+  border-color: #76fe0e;
+  outline: none;
+}
